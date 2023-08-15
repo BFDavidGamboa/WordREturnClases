@@ -2,16 +2,27 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Sum s = createObjectSum();
+        s.sum();
+        System.out.println("Result in calling the method sum: " + s.sum());
+    }
 
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+    private static Sum createObjectSum(){
+        Sum sum = new Sum(4,6);
+        return sum;
+    }
+}
 
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
-        }
+class Sum {
+    int a;
+    int b;
+    public Sum(int a, int b){
+
+        this.a = a;
+        this.b = b;
+    }
+
+    public int sum(){
+        return this.a + this.b;
     }
 }
